@@ -52,6 +52,20 @@
                justify-content: center;
                margin-top: 12px;
           }
+
+          details.secret-toggle {
+               text-align: center;
+               margin-top: 16px;
+          }
+
+          details.secret-toggle > summary {
+               display: inline-block;
+               cursor: pointer;
+               padding: 8px 14px;
+               border: 1px solid #1e1e1e;
+               border-radius: 8px;
+               background: #f7f7f7;
+          }
      </style>
 </head>
 <body>
@@ -96,20 +110,22 @@
                </div>
           </nav>
 
-          <h4><em>How to make a flower bouquet?</em></h4>
-          <p>Here is a tutorial for making a flower bouquet.</p>
-          <dialog open>Secret message</dialog>
-          <div class="video">
-               <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube-nocookie.com/embed/SnIXojnL_wI?si=mkFsKCAcYr5_He2z"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-               ></iframe>
-          </div>
+          <details class="secret-toggle">
+               <summary>Secret message</summary>
+               <h4><em>How to make a flower bouquet?</em></h4>
+               <p>Here is a tutorial for making a flower bouquet.</p>
+               <div class="video">
+                    <iframe
+                         width="560"
+                         height="315"
+                         src="https://www.youtube-nocookie.com/embed/SnIXojnL_wI?si=mkFsKCAcYr5_He2z"
+                         title="YouTube video player"
+                         frameborder="0"
+                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                         allowfullscreen
+                    ></iframe>
+               </div>
+          </details>
      </main>
 </body>
 </html>
