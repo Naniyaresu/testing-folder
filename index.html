@@ -72,7 +72,7 @@
           <h1>Leighy's Hanakotoba Shop</h1>
           <h2>Hoping these flowers will make you smile, my darling</h2>
           <h3><em>Every flower blooms in its own time</em></h3>
-          <p><time>4:23</time></p>
+          <p><time id="phTime">Loading Philippines time...</time></p>
 
           <hr />
 
@@ -131,6 +131,20 @@
      <script>
           const secretToggle = document.getElementById("secretToggle");
           const secretContent = document.getElementById("secretContent");
+          const phTime = document.getElementById("phTime");
+
+          function updatePhilippinesTime() {
+               phTime.textContent = new Intl.DateTimeFormat("en-PH", {
+                    timeZone: "Asia/Manila",
+                    hour: "numeric",
+                    minute: "2-digit",
+                    second: "2-digit",
+                    hour12: true
+               }).format(new Date());
+          }
+
+          updatePhilippinesTime();
+          setInterval(updatePhilippinesTime, 1000);
 
           secretToggle.addEventListener("click", function () {
                const isHidden = secretContent.hasAttribute("hidden");
