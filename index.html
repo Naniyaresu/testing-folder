@@ -53,13 +53,12 @@
                margin-top: 12px;
           }
 
-          details.secret-toggle {
+          .secret-toggle {
                text-align: center;
                margin-top: 16px;
           }
 
-          details.secret-toggle > summary {
-               display: inline-block;
+          .secret-toggle button {
                cursor: pointer;
                padding: 8px 14px;
                border: 1px solid #1e1e1e;
@@ -110,8 +109,10 @@
                </div>
           </nav>
 
-          <details class="secret-toggle">
-               <summary>Secret message</summary>
+          <div class="secret-toggle">
+               <button id="secretToggle" type="button" aria-controls="secretContent" aria-expanded="false">Secret message</button>
+          </div>
+          <div id="secretContent" hidden>
                <h4><em>How to make a flower bouquet?</em></h4>
                <p>Here is a tutorial for making a flower bouquet.</p>
                <div class="video">
@@ -125,7 +126,23 @@
                          allowfullscreen
                     ></iframe>
                </div>
-          </details>
+          </div>
      </main>
+     <script>
+          const secretToggle = document.getElementById("secretToggle");
+          const secretContent = document.getElementById("secretContent");
+
+          secretToggle.addEventListener("click", function () {
+               const isHidden = secretContent.hasAttribute("hidden");
+
+               if (isHidden) {
+                    secretContent.removeAttribute("hidden");
+                    secretToggle.setAttribute("aria-expanded", "true");
+               } else {
+                    secretContent.setAttribute("hidden", "");
+                    secretToggle.setAttribute("aria-expanded", "false");
+               }
+          });
+     </script>
 </body>
 </html>
