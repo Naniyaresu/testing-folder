@@ -47,6 +47,11 @@
                text-align: center;
           }
 
+          .video-link {
+               text-align: center;
+               margin-top: 12px;
+          }
+
           .video {
                display: flex;
                justify-content: center;
@@ -64,6 +69,14 @@
                border: 1px solid #1e1e1e;
                border-radius: 8px;
                background: #f7f7f7;
+          }
+
+          .secret-image {
+               display: block;
+               max-width: 320px;
+               width: 100%;
+               height: auto;
+               margin: 10px auto 0;
           }
      </style>
 </head>
@@ -113,20 +126,15 @@
                <button id="secretToggle" type="button" aria-controls="secretContent" aria-expanded="false">Secret message</button>
           </div>
           <div id="secretContent" hidden>
-               <h4><em>How to make a flower bouquet?</em></h4>
-               <p>Here is a tutorial for making a flower bouquet.</p>
-               <div class="video">
-                    <iframe
-                         width="560"
-                         height="315"
-                         src="https://www.youtube-nocookie.com/embed/SnIXojnL_wI?si=mkFsKCAcYr5_He2z"
-                         title="YouTube video player"
-                         frameborder="0"
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                         allowfullscreen
-                    ></iframe>
-               </div>
+               <h4><em>Okay na ba? AHAHHA</em></h4>
+               <img class="secret-image" src="PNG files/thumbs-up.png" alt="Thumbs up image" />
           </div>
+
+          <h4><em>How to make a flower bouquet?</em></h4>
+          <p>Here is a tutorial for making a flower bouquet.</p>
+          <p class="video-link">
+               <a href="https://www.youtube.com/watch?v=SnIXojnL_wI" target="_blank" rel="noopener noreferrer">Watch the video tutorial</a>
+          </p>
      </main>
      <script>
           const secretToggle = document.getElementById("secretToggle");
